@@ -1,0 +1,37 @@
+<html ng-app="basic">
+   <head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+      <title>Day 28 Responsive Angular Form</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+   </head>
+   <body>
+
+     <div class="states">States</div>
+     <input class="input" type="text" placeholder="filter">
+         <table ng-controller="tableController">
+            <tr id="column-headers">
+               <th ng-click="onNameClick()">Name</th>
+               <th>Abbreviation</th>
+               <th>Wikipedia</th>
+            </tr>
+
+            <tr id="state-list" ng-repeat="state in states">
+               <td>{{state.name}}</td>
+               <td>{{state.abbreviation}}</td>
+               <td><a ng-href='http://en.wikipedia.org/wiki/{{ state.name }}'>Learn more about {{state.name}} here!</a></td>
+            </tr>
+         </table>
+  
+   <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+   <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+	<script type = "text/javascript" src="bower_components/angular/angular.min.js" ></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="scripts/controllers.js"></script>
+
+   </body>
+</html>
+

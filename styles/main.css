@@ -1,0 +1,11 @@
+.states{
+	display: inline-block;
+	font-size: 1.5em;
+}
+.input{
+	margin-left: 3em;
+	float:; right;
+	line-height: 1.5em;
+	vertical-align: top;
+	font-size: 0.75em;
+}
