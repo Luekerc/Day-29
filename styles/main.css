@@ -1,11 +1,58 @@
+body{
+	background-color: rgb(50, 50, 50);
+	opacity: 0.785;
+}
+
+
+
+#head-line{
+	background-color: rgb(219,230,235);
+	padding-top: 0.5em;
+	width: 29.65em;
+	border: double 3px black;
+}
+table{
+	width: 30em;
+	border: double 3px black;
+	background-color: rgb(219,230,235);
+}
+
 .states{
 	display: inline-block;
 	font-size: 1.5em;
+	padding-left: 1em;
 }
 .input{
-	margin-left: 3em;
-	float:; right;
 	line-height: 1.5em;
 	vertical-align: top;
 	font-size: 0.75em;
+	margin: 0 0 0.5em 10em;
+}
+#column-headers{
+	background-color: rgb(201,221,230);
+	text-align: left;
+	line-height: 2em;
+	border: 1px solid black;
+}
+.name: hover{
+	color: white;
+}
+td a{
+	text-decoration: none;
+	color: blue;
+}
+td a:hover{
+	background-color: rgb(201,221,230);
+}
+tr{
+	line-height: 2em;
+	padding: 0.4em 0;
+}
+
+tr:nth-child(odd){
+	background-color: rgb(229,236,244);
+	border: double 3px black;
+}
+tr:nth-child(even){
+	background-color: rgb(244,248,252);
 }

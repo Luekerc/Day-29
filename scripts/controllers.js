@@ -4,15 +4,32 @@ angular.module('basic.controllers', [])
 	$scope.states=[];
 	$scope.wikiLink=[];
 	$scope.reversedStates=[];
+	$scope.filterNames = '';
+	$scope.reverseArray=[];
+
 
 	$http.get('http://tiny-pizza-server.herokuapp.com/collections/fancy-table').success(function(response){
-		$scope.states = response;
-		console.log($scope.states);
+		$scope.states =response;
+
+		$scope.states=_.sortBy($scope.states,function(element){
+			return element.name+element.abbreviation;
+		})
+		$scope.newArray=_.sortBy($scope.states,function(element){
+			return element.name+element.abbreviation;
+		})
 	});
 
 	$scope.onNameClick=function(){
-		$scope.reversedStates=$scope.states.reverse();
-	}
+		$scope.reverseArray=$scope.newArray;
+		$scope.newArray=$scope.reverseArray.reverse();
+	};
+	console.log('pre-clearing');
+	$scope.$watch('filterNames', function(){
+		$scope.newArray=_.filter($scope.states,function(element){
+		return element.name.toLowerCase().indexOf($scope.filterNames.toLowerCase())===0||
+		element.abbreviation.toLowerCase().indexOf($scope.filterNames.toLowerCase())===0;
+		});
+	});	
 
 });
 

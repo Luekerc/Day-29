@@ -8,21 +8,23 @@
       <link rel="stylesheet" href="styles/main.css">
       <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
    </head>
-   <body>
+   <body ng-controller="tableController">
 
-     <div class="states">States</div>
-     <input class="input" type="text" placeholder="filter">
-         <table ng-controller="tableController">
+         <div id="head-line">
+         <div class="states" >States</div>
+         <input class="input" type="text" placeholder="filter" ng-model="filterNames"> <!--add ?ng-model="filterNames()"?-->
+         </div><!--head-line-->
+         <table>
             <tr id="column-headers">
-               <th ng-click="onNameClick()">Name</th>
+               <th class="name" ng-click="onNameClick()">Name</th>
                <th>Abbreviation</th>
                <th>Wikipedia</th>
             </tr>
 
-            <tr id="state-list" ng-repeat="state in states">
+            <tr id="state-list" ng-repeat="state in newArray">
                <td>{{state.name}}</td>
                <td>{{state.abbreviation}}</td>
-               <td><a ng-href='http://en.wikipedia.org/wiki/{{ state.name }}'>Learn more about {{state.name}} here!</a></td>
+               <td><a class="button" ng-href='http://en.wikipedia.org/wiki/{{ state.name }}'>Learn more about {{state.name}} here!</a></td>
             </tr>
          </table>
   
