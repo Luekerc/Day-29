@@ -10,7 +10,6 @@ angular.module('basic.controllers', [])
 
 	$http.get('http://tiny-pizza-server.herokuapp.com/collections/fancy-table').success(function(response){
 		$scope.states =response;
-
 		$scope.states=_.sortBy($scope.states,function(element){
 			return element.name+element.abbreviation;
 		})
@@ -23,7 +22,7 @@ angular.module('basic.controllers', [])
 		$scope.reverseArray=$scope.newArray;
 		$scope.newArray=$scope.reverseArray.reverse();
 	};
-	console.log('pre-clearing');
+
 	$scope.$watch('filterNames', function(){
 		$scope.newArray=_.filter($scope.states,function(element){
 		return element.name.toLowerCase().indexOf($scope.filterNames.toLowerCase())===0||
